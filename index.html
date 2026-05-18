@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Velo Nail Budapest - nail, haircut and coffee at 1111 Budapest, Bertalan Lajos utca 18.">
+  <title>Velo Nail Budapest</title>
+  <style>
+    :root {
+      --ink: #4b302f;
+      --muted: #8a6f6a;
+      --paper: #fff8f5;
+      --panel: #fffdfb;
+      --stone: #edd9d4;
+      --rose: #d9838e;
+      --rose-dark: #b95b68;
+      --sage: #9b8b73;
+      --gold: #d4aa66;
+      --shadow: 0 20px 55px rgba(96, 57, 56, 0.14);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      letter-spacing: 0.01em;
+    }
+
+    img,
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 10;
+      background: rgba(75, 48, 47, 0.84);
+      color: #fff;
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 66px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      font-weight: 700;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand small {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.74rem;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.92rem;
+    }
+
+    .nav-links a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      outline: none;
+    }
+
+    .hero {
+      min-height: 84vh;
+      padding: 112px 0 56px;
+      display: grid;
+      align-items: end;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(75, 48, 47, 0.72), rgba(75, 48, 47, 0.34) 52%, rgba(75, 48, 47, 0.08)),
+        url("z7833178067741_52d6ce4ec17b1c7ca9a29ed0f11c5509.jpg") center / cover;
+    }
+
+    .hero-inner,
+    .section-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      display: grid;
+      gap: 22px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      padding: 7px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: 0.95;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+    }
+
+    .hero-actions,
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .button.primary {
+      background: var(--rose);
+      color: #fff;
+    }
+
+    .button.primary:hover,
+    .button.primary:focus-visible {
+      background: var(--rose-dark);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.38);
+      color: #fff;
+    }
+
+    .button.light {
+      background: #fff;
+      color: var(--ink);
+      border-color: var(--stone);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 34px;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 900px;
+    }
+
+    .fact {
+      min-height: 92px;
+      padding: 18px;
+      background: rgba(75, 48, 47, 0.44);
+    }
+
+    .fact span {
+      display: block;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 7px;
+    }
+
+    .fact strong {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.55fr);
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .section-inner {
+      position: relative;
+    }
+
+    .section-kicker {
+      color: var(--rose-dark);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4.2vw, 4rem);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    .intro-band {
+      background: var(--panel);
+      padding: 34px 0;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .intro-grid {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .intro-item {
+      display: grid;
+      gap: 7px;
+      padding-left: 18px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .intro-item strong {
+      font-size: 1rem;
+    }
+
+    .intro-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .menu-section {
+      background: linear-gradient(180deg, #fffdfb 0%, #fff3ef 100%);
+    }
+
+    .drink-source {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.38fr) minmax(0, 0.62fr);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 28px;
+      padding: 24px;
+      border: 1px solid var(--stone);
+      border-radius: calc(var(--radius) + 6px);
+      background:
+        radial-gradient(circle at top right, rgba(217, 131, 142, 0.16), transparent 34%),
+        var(--panel);
+      box-shadow: 0 16px 40px rgba(96, 57, 56, 0.08);
+    }
+
+    .drink-menu {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--stone);
+      background: var(--panel);
+    }
+
+    .drink-source-copy {
+      display: grid;
+      gap: 12px;
+    }
+
+    .drink-source-copy h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 2.2vw, 2rem);
+      line-height: 1.18;
+      font-weight: 500;
+    }
+
+    .drink-source-copy p {
+      color: var(--muted);
+    }
+
+    .drink-board {
+      display: grid;
+      gap: 24px;
+    }
+
+    .drink-category {
+      display: grid;
+      gap: 14px;
+    }
+
+    .drink-category-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .drink-category-head h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+
+    .drink-category-head span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .drink-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .drink-item {
+      display: grid;
+      gap: 14px;
+      padding: 16px;
+      background: rgba(255, 253, 251, 0.94);
+      border: 1px solid var(--stone);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px rgba(31, 26, 23, 0.06);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .drink-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(185, 91, 104, 0.34);
+      box-shadow: 0 16px 30px rgba(96, 57, 56, 0.12);
+    }
+
+    .drink-item h4 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.08rem;
+      line-height: 1.2;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .drink-prices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .drink-prices span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #fff2ed;
+      color: var(--muted);
+      font-size: 0.88rem;
+      border: 1px solid #ece2d7;
+    }
+
+    .drink-prices strong {
+      color: var(--rose-dark);
+      font-size: 0.92rem;
+    }
+
+    .media-band {
+      background: #5a3938;
+      color: #fff;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .video-frame,
+    .media-photo {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #111;
+      min-height: 100%;
+    }
+
+    .video-frame video,
+    .media-photo img {
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .media-copy {
+      display: grid;
+      gap: 18px;
+      align-content: center;
+      padding: 12px 0;
+    }
+
+    .media-copy p {
+      color: rgba(255, 255, 255, 0.74);
+      max-width: 560px;
+    }
+
+    .prices {
+      background: linear-gradient(180deg, #fffdfb 0%, #fff7f3 100%);
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .price-card {
+      display: grid;
+      gap: 16px;
+      padding: 24px;
+      border: 1px solid var(--stone);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 10px 25px rgba(31, 26, 23, 0.06);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(185, 91, 104, 0.34);
+      box-shadow: 0 18px 36px rgba(96, 57, 56, 0.12);
+    }
+
+    .price-card.wide {
+      grid-column: 1 / -1;
+    }
+
+    .price-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--stone);
+    }
+
+    .price-top h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.7rem;
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .duration {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #fff0ea;
+      color: var(--rose-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .price-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .price-list li {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: baseline;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee8df;
+    }
+
+    .price-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .item-name {
+      color: var(--muted);
+    }
+
+    .item-name strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .amount {
+      font-weight: 800;
+      color: var(--rose-dark);
+      white-space: nowrap;
+    }
+
+    .sizes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .size-box {
+      display: grid;
+      gap: 10px;
+      padding: 16px;
+      background: #fff2ed;
+      border-radius: var(--radius);
+      border: 1px solid #ece2d7;
+    }
+
+    .size-box h4 {
+      margin: 0;
+      color: var(--sage);
+      font-size: 1rem;
+    }
+
+    .size-box p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .gallery {
+      background: var(--paper);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-flow: dense;
+      gap: 10px;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #eee;
+      box-shadow: 0 12px 28px rgba(96, 57, 56, 0.1);
+    }
+
+    .gallery-grid figure.wide {
+      grid-column: span 2;
+      aspect-ratio: 2 / 1;
+    }
+
+    .gallery-grid img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 220ms ease;
+    }
+
+    .gallery-grid figure:hover img {
+      transform: scale(1.035);
+    }
+
+    .contact {
+      background:
+        linear-gradient(90deg, rgba(75, 48, 47, 0.9), rgba(75, 48, 47, 0.66)),
+        url("z7833178067762_784ab7108f32dad482787cce7497c664.jpg") center / cover;
+      color: #fff;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.5fr);
+      grid-template-areas:
+        "copy details"
+        "map map";
+      gap: 28px 36px;
+      align-items: end;
+    }
+
+    .contact-copy {
+      grid-area: copy;
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, 0.76);
+      max-width: 620px;
+      margin-top: 14px;
+    }
+
+    .contact .contact-actions {
+      margin-top: 24px;
+    }
+
+    .contact-list {
+      grid-area: details;
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
+      font-style: normal;
+    }
+
+    .contact-row {
+      display: grid;
+      gap: 3px;
+    }
+
+    .contact-row span {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-row a,
+    .contact-row strong {
+      overflow-wrap: anywhere;
+      font-weight: 700;
+    }
+
+    .social-links {
+      display: grid;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      color: #fff;
+    }
+
+    .social-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      flex: 0 0 auto;
+    }
+
+    .social-icon svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+    }
+
+    .social-link:hover .social-icon,
+    .social-link:focus-visible .social-icon {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .contact-map {
+      grid-area: map;
+      min-height: 330px;
+      overflow: hidden;
+      border-radius: calc(var(--radius) + 4px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 20px 40px rgba(35, 20, 20, 0.22);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-map iframe {
+      display: block;
+      width: 100%;
+      height: 330px;
+      border: 0;
+    }
+
+    footer {
+      padding: 22px 0;
+      background: #4b302f;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-credit {
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 0.84rem;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        align-items: flex-start;
+        padding: 12px 0;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        min-height: 78svh;
+        padding-top: 156px;
+      }
+
+      .facts,
+      .intro-grid,
+      .section-head,
+      .drink-source,
+      .media-grid,
+      .price-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-layout {
+        grid-template-areas:
+          "copy"
+          "details"
+          "map";
+        gap: 24px;
+      }
+
+      .contact-map,
+      .contact-map iframe {
+        min-height: 300px;
+        height: 300px;
+      }
+
+      .drink-note {
+        position: static;
+      }
+
+      .sizes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links a {
+        padding: 6px 8px;
+        font-size: 0.86rem;
+      }
+
+      .hero {
+        min-height: 74svh;
+        padding-top: 172px;
+        background-position: center;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 58px 0;
+      }
+
+      .price-top,
+      .price-list li {
+        grid-template-columns: 1fr;
+      }
+
+      .price-top {
+        display: grid;
+      }
+
+      .duration,
+      .amount {
+        width: fit-content;
+      }
+
+      .sizes,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .drink-category-head {
+        display: grid;
+      }
+
+      .gallery-grid figure.wide {
+        grid-column: auto;
+        aspect-ratio: 1 / 1;
+      }
+
+      .video-frame video,
+      .media-photo img {
+        min-height: 300px;
+      }
+
+      .contact-list {
+        padding: 18px;
+      }
+
+      .contact-map,
+      .contact-map iframe {
+        min-height: 240px;
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top">
+        <span>Velo Nail Budapest</span>
+        <small>Nail - Haircut - Coffee</small>
+      </a>
+      <div class="nav-links">
+        <a href="#arak">Árak</a>
+        <a href="#italok">Italok</a>
+        <a href="#galeria">Galéria</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Velo Nail Budapest">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">1111 Budapest - Bertalan Lajos utca 18</span>
+          <h1>Velo Nail Budapest</h1>
+          <p>Manikűr, pedikűr, műköröm, férfi hajvágás és frissítő italok egy barátságos budapesti szalonban.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="tel:+36703674893">Hívás: +36 70 367 4893</a>
+            <a class="button secondary" href="https://maps.app.goo.gl/NgidqQd69gMZqBmL7" target="_blank" rel="noopener">Útvonalterv</a>
+          </div>
+        </div>
+        <div class="facts" aria-label="Quick information">
+          <div class="fact">
+            <span>Szolgáltatások</span>
+            <strong>Nail, haircut, coffee</strong>
+          </div>
+          <div class="fact">
+            <span>Cím</span>
+            <strong>1111 Budapest, Bertalan Lajos u. 18</strong>
+          </div>
+          <div class="fact">
+            <span>Időpont</span>
+            <strong>Telefonon vagy közösségi oldalon</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="intro-band" aria-label="Highlights">
+      <div class="intro-grid">
+        <div class="intro-item">
+          <strong>Ápolt kéz és láb</strong>
+          <span>Tisztítás, masszázs, gél lakk és műköröm építés.</span>
+        </div>
+        <div class="intro-item">
+          <strong>Férfi hajvágás</strong>
+          <span>Hajvágás, szakáll igazítás, hajmosás.</span>
+        </div>
+        <div class="intro-item">
+          <strong>Italok helyben</strong>
+          <span>Yogurt shake, fruit tea, milk tea és kávé.</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="prices" id="arak">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Árlista</div>
+            <h2>Nail és haircut menü</h2>
+          </div>
+          <p>Az árak forintban értendők. A műköröm árak egy alapszínt tartalmaznak, a díszítés körmönként számolandó.</p>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Tisztítás / Cleaning</h3>
+              <span class="duration">35 perc</span>
+            </div>
+            <ul class="price-list">
+              <li>
+                <span class="item-name"><strong>Kéz / Hands</strong>tisztítás + masszázs / cleaning + massage</span>
+                <span class="amount">5000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Láb / Feet</strong>tisztítás + masszázs / cleaning + massage</span>
+                <span class="amount">7000 Ft</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Eltávolítás / Removal</h3>
+              <span class="duration">20 perc</span>
+            </div>
+            <ul class="price-list">
+              <li>
+                <span class="item-name"><strong>Gél lakk eltávolítás</strong>Gel polish removal</span>
+                <span class="amount">2000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Gél vagy porcelán eltávolítás</strong>Gel or acrylic removal</span>
+                <span class="amount">4000 Ft</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Gél lakk / Gel Polish</h3>
+              <span class="duration">1 óra</span>
+            </div>
+            <ul class="price-list">
+              <li>
+                <span class="item-name"><strong>Kéz / Hands</strong>tisztítás + gél lakk / cleaning + gel polish</span>
+                <span class="amount">6000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Kéz francia / babyboomer</strong>gel polish + french / babyboomer</span>
+                <span class="amount">8000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Láb / Feet</strong>tisztítás + gél lakk / cleaning + gel polish</span>
+                <span class="amount">8000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Láb extra</strong>francia / babyboomer / cat eye</span>
+                <span class="amount">10.000 Ft</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Férfi hajvágás / Men&apos;s Haircut</h3>
+              <span class="duration">45 perc</span>
+            </div>
+            <ul class="price-list">
+              <li>
+                <span class="item-name"><strong>Hajvágás</strong>Haircut</span>
+                <span class="amount">4000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Hajvágás + szakáll</strong>Haircut + beard</span>
+                <span class="amount">5000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Szakáll igazítás</strong>Beard trim</span>
+                <span class="amount">2000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Hajvágás + hajmosás</strong>Haircut + hair wash</span>
+                <span class="amount">5000 Ft</span>
+              </li>
+              <li>
+                <span class="item-name"><strong>Hajmosás</strong>Hair wash</span>
+                <span class="amount">2000 Ft</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="price-card wide">
+            <div class="price-top">
+              <h3>Műköröm építés / Nail Extensions</h3>
+              <span class="duration">1 óra 45 perc</span>
+            </div>
+            <p class="item-name">(gél és porcelán / gel &amp; acrylic) - Az ár 1 alapszínt tartalmaz / Price includes one basic color.</p>
+            <div class="sizes">
+              <div class="size-box">
+                <h4>Size S</h4>
+                <p>Alap / Basic: <strong>8000 Ft</strong></p>
+                <p>Francia / babyboomer / cat eye: <strong>10.000 Ft</strong></p>
+                <p>Díszítés: <strong>500 Ft / köröm</strong></p>
+              </div>
+              <div class="size-box">
+                <h4>Size M</h4>
+                <p>Alap / Basic: <strong>9000 Ft</strong></p>
+                <p>Francia / babyboomer / cat eye: <strong>11.000 Ft</strong></p>
+                <p>Díszítés: <strong>700 Ft / köröm</strong></p>
+              </div>
+              <div class="size-box">
+                <h4>Size L</h4>
+                <p>Alap / Basic: <strong>10.000 Ft</strong></p>
+                <p>Francia / babyboomer / cat eye: <strong>12.000 Ft</strong></p>
+                <p>Díszítés: <strong>900 Ft / köröm</strong></p>
+              </div>
+              <div class="size-box">
+                <h4>Size XL</h4>
+                <p>Alap / Basic: <strong>11.000 Ft</strong></p>
+                <p>Francia / babyboomer / cat eye: <strong>13.000 Ft</strong></p>
+                <p>Díszítés: <strong>1.100 Ft / köröm</strong></p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="media-band" aria-label="Salon video">
+      <div class="section-inner">
+        <div class="media-grid">
+          <div class="video-frame">
+            <video controls preload="metadata" poster="z7833178067755_e5d748cbeb12bc1f8f10b20bdc0d126e.jpg">
+              <source src="7833592694158.mp4" type="video/mp4">
+              A böngésződ nem támogatja a videó lejátszását.
+            </video>
+          </div>
+          <div class="media-copy">
+            <div class="section-kicker">Szalon hangulat</div>
+            <h2>Nail, haircut és kávé egy helyen</h2>
+            <p>A szalonban külön körmös, pedikűrös, fodrász és italpult rész várja a vendégeket.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="italok">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Drink menu</div>
+            <h2>Italok a szalonban</h2>
+          </div>
+          <p>A teljes italválaszték a helyben készült menüképen látható, yogurt shake, gyümölcstea, milk tea és kávé kategóriákkal.</p>
+        </div>
+        <div class="drink-source">
+          <figure class="drink-menu">
+            <img src="z7833094633539_9fe629081376242164fc0668b960bf0c.jpg" alt="Velo drink menu with yogurt shake, fruit tea, milk tea and coffee prices">
+          </figure>
+          <div class="drink-source-copy">
+            <div class="section-kicker">Teljes itallap</div>
+            <h3>Most már minden ital külön is átlátható</h3>
+            <p>A nyomtatott menülap megmaradt referenciának, alatta pedig minden ital saját kártyát kapott névvel és árral.</p>
+          </div>
+        </div>
+
+        <div class="drink-board">
+          <section class="drink-category" aria-label="Yogurt shake drinks">
+            <div class="drink-category-head">
+              <h3>Yogurt Shake</h3>
+              <span>M: 1500 Ft · L: 1800 Ft</span>
+            </div>
+            <div class="drink-grid">
+              <article class="drink-item">
+                <h4>Strawberry yogurt shake</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Mango yogurt shake</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Peach yogurt shake</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Pink guava yogurt shake</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Blueberry yogurt shake</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Passion fruit yogurt shake</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="drink-category" aria-label="Fruit tea drinks">
+            <div class="drink-category-head">
+              <h3>Fruit Tea</h3>
+              <span>M: 1000 Ft · L: 1500 Ft</span>
+            </div>
+            <div class="drink-grid">
+              <article class="drink-item">
+                <h4>Velo tea special</h4>
+                <div class="drink-prices"><span>M <strong>1000 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Strawberry tea</h4>
+                <div class="drink-prices"><span>M <strong>1000 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Mango tea</h4>
+                <div class="drink-prices"><span>M <strong>1000 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Peach tea</h4>
+                <div class="drink-prices"><span>M <strong>1000 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Pink guava tea</h4>
+                <div class="drink-prices"><span>M <strong>1000 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Passion fruit tea</h4>
+                <div class="drink-prices"><span>M <strong>1000 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Blueberry tea</h4>
+                <div class="drink-prices"><span>M <strong>1000 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Fruit tea</h4>
+                <div class="drink-prices"><span>M <strong>1000 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="drink-category" aria-label="Milk tea drinks">
+            <div class="drink-category-head">
+              <h3>Milk Tea</h3>
+              <span>M/L árak italonként</span>
+            </div>
+            <div class="drink-grid">
+              <article class="drink-item">
+                <h4>Boba milk tea</h4>
+                <div class="drink-prices"><span>M <strong>1200 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Milk tea cheese tiramisu</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Brown sugar boba milk</h4>
+                <div class="drink-prices"><span>M <strong>1200 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Boba chocolate</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Boba matcha</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Milk tea cheese cream</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Iced strawberry matcha</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Latte matcha</h4>
+                <div class="drink-prices"><span>M <strong>1200 Ft</strong></span><span>L <strong>1500 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Green tea frappuccino</h4>
+                <div class="drink-prices"><span>M <strong>1500 Ft</strong></span><span>L <strong>1800 Ft</strong></span></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="drink-category" aria-label="Coffee drinks">
+            <div class="drink-category-head">
+              <h3>Coffee Velo</h3>
+              <span>Árak pohárméret szerint</span>
+            </div>
+            <div class="drink-grid">
+              <article class="drink-item">
+                <h4>Espresso</h4>
+                <div class="drink-prices"><span>S <strong>450 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Ristretto</h4>
+                <div class="drink-prices"><span>S <strong>450 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Double espresso</h4>
+                <div class="drink-prices"><span>M <strong>850 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Espresso macchiato</h4>
+                <div class="drink-prices"><span>M <strong>600 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Latte macchiato</h4>
+                <div class="drink-prices"><span>M <strong>600 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Capuchino</h4>
+                <div class="drink-prices"><span>M <strong>600 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Caffe latte</h4>
+                <div class="drink-prices"><span>M <strong>600 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Americano</h4>
+                <div class="drink-prices"><span>M <strong>600 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Flat white</h4>
+                <div class="drink-prices"><span>M <strong>850 Ft</strong></span></div>
+              </article>
+              <article class="drink-item">
+                <h4>Coffee Velo special</h4>
+                <div class="drink-prices"><span>M <strong>1200 Ft</strong></span></div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="galeria">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Galéria</div>
+            <h2>Szalon és munkáink</h2>
+          </div>
+          <p>Fotók a Velo Nail Budapest üzletéről, belső teréről és elkészült köröm munkákról.</p>
+        </div>
+
+        <div class="gallery-grid" aria-label="Photo gallery">
+          <figure class="wide"><img loading="lazy" src="z7833178067756_78f2cec78c1620c9bdf98d1411b60b39.jpg" alt="Velo Nail storefront at night"></figure>
+          <figure><img loading="lazy" src="z7833178067761_1f6c562780b53bbc591ce9726aaf5934.jpg" alt="Velo coffee counter"></figure>
+          <figure><img loading="lazy" src="z7833178344828_aacaae1574a7fd1880bf3edc75e39981.jpg" alt="Light blue gel polish nails"></figure>
+          <figure><img loading="lazy" src="z7833178067755_e5d748cbeb12bc1f8f10b20bdc0d126e.jpg" alt="Salon interior with nail and haircut stations"></figure>
+          <figure><img loading="lazy" src="z7833178344840_776c03ec3068948928b4dba3556f0ad5.jpg" alt="Natural pink gel polish nails"></figure>
+          <figure class="wide"><img loading="lazy" src="z7833178067762_784ab7108f32dad482787cce7497c664.jpg" alt="Salon interior with service chairs"></figure>
+          <figure><img loading="lazy" src="z7833178344841_aad6da825b5d5df053bb4904a8f9427b.jpg" alt="Black long nail extensions with gold details"></figure>
+          <figure><img loading="lazy" src="z7833178344842_7ff2163d888f3b416c58f358b0cea624.jpg" alt="French manicure nails"></figure>
+          <figure><img loading="lazy" src="z7833193320611_d98f3879422d49c134264b1e3363b264.jpg" alt="Pink shimmer nail detail"></figure>
+          <figure><img loading="lazy" src="z7833193473414_fa9a909b97a8812df76d5d7c915ea0f9.jpg" alt="Floral pink nail art"></figure>
+          <figure><img loading="lazy" src="z7833193618233_ea5c99c6111e1a5a4fb2d7b631218a83.jpg" alt="Pink ombre nails with flowers"></figure>
+          <figure><img loading="lazy" src="z7833193748410_4a3298b9ef3471a2a11d9f5c541ae69d.jpg" alt="Star nail art"></figure>
+          <figure class="wide"><img loading="lazy" src="z7833178067741_52d6ce4ec17b1c7ca9a29ed0f11c5509.jpg" alt="Velo Nail Budapest exterior with terrace seating"></figure>
+          <figure><img loading="lazy" src="z7833178067758_935ea5c6b811417b6ab6bdc759fe8aea.jpg" alt="Exterior view of Velo Nail Budapest"></figure>
+          <figure><img loading="lazy" src="z7833178067759_9e7f41bca79ae22f623e9e4cce0b01cd.jpg" alt="Entrance to Velo Nail Haircut Coffee"></figure>
+          <figure><img loading="lazy" src="z7833178067760_e37f4cfd826fde38af9dac3b8a2b2f3f.jpg" alt="Interior view with nail and haircut area"></figure>
+          <figure><img loading="lazy" src="z7833178067764_759e7b60132c90fc76e0b5f968671dbc.jpg" alt="Warm salon interior"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kapcsolat">
+      <div class="section-inner">
+        <div class="contact-layout">
+          <div class="contact-copy">
+            <div class="section-kicker">Kapcsolat</div>
+            <h2>Foglalj időpontot vagy látogass el hozzánk</h2>
+            <p>Telefonon, Facebookon és Instagramon is elérhető a Velo Nail Budapest. A térkép link közvetlenül az üzlethez vezet.</p>
+            <div class="contact-actions">
+              <a class="button primary" href="tel:+36703674893">Telefonhívás</a>
+              <a class="button secondary" href="https://maps.app.goo.gl/NgidqQd69gMZqBmL7" target="_blank" rel="noopener">Megnyitás térképen</a>
+            </div>
+          </div>
+
+          <address class="contact-list">
+            <div class="contact-row">
+              <span>Cím</span>
+              <strong>1111 Budapest, Bertalan Lajos u. 18</strong>
+            </div>
+            <div class="contact-row">
+              <span>Telefon</span>
+              <a href="tel:+36703674893">+36 70 367 4893</a>
+            </div>
+            <div class="contact-row">
+              <span>Facebook</span>
+              <div class="social-links">
+                <a class="social-link" href="https://www.facebook.com/p/Velo-Nail-Haircut-Coffee-61567637337780/" target="_blank" rel="noopener">
+                  <span class="social-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M13.5 21v-8h2.8l.42-3H13.5V8.08c0-.87.24-1.46 1.48-1.46H16.8V3.94c-.31-.04-1.37-.14-2.61-.14-2.59 0-4.36 1.58-4.36 4.48V10H6.9v3h2.93v8h3.67Z"/>
+                    </svg>
+                  </span>
+                  <span>Velo Nail Haircut Coffee</span>
+                </a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <span>Instagram</span>
+              <div class="social-links">
+                <a class="social-link" href="https://www.instagram.com/velo.nailhaircutcoffee/" target="_blank" rel="noopener">
+                  <span class="social-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm10.25 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+                    </svg>
+                  </span>
+                  <span>@velo.nailhaircutcoffee</span>
+                </a>
+              </div>
+            </div>
+          </address>
+
+          <div class="contact-map">
+            <iframe
+              title="Velo Nail Budapest térkép"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=1111%20Budapest%2C%20Bertalan%20Lajos%20utca%2018&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner footer-inner">
+      <div class="footer-main">
+        <span>Velo Nail Budapest</span>
+        <span>Nail - Haircut - Coffee</span>
+      </div>
+      <span class="footer-credit">© 2026 All Rights Reserved · Designed by Hoangcaster</span>
+    </div>
+  </footer>
+</body>
+</html>
