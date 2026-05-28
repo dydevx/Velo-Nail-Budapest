@@ -176,7 +176,8 @@
       gap: 12px;
     }
 
-    .button {
+    .button,
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -209,6 +210,18 @@
       background: var(--rose-dark);
     }
 
+    .btn-dark {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+
+    .btn-dark:hover,
+    .btn-dark:focus-visible {
+      background: #2f1c1b;
+      border-color: #2f1c1b;
+    }
+
     .button.secondary {
       background: rgba(255, 255, 255, 0.12);
       border-color: rgba(255, 255, 255, 0.38);
@@ -221,7 +234,8 @@
       border-color: var(--stone);
     }
 
-    .button[href^="tel:"] {
+    .button[href^="tel:"],
+    .mobile-call {
       -webkit-touch-callout: default;
     }
 
@@ -1044,7 +1058,12 @@
           <h1>Velo Nail Budapest</h1>
           <p>Manikűr, pedikűr, műköröm, férfi hajvágás és frissítő italok egy barátságos budapesti szalonban.</p>
           <div class="hero-actions">
-            <a class="button primary" href="tel:+36-70-367-4893">Hívás: +36 70 367 4893</a>
+            <a class="mobile-call btn btn-dark"
+               href="tel:+36 70 367 4893"
+               target="_top"
+               aria-label="Velo Nail Budapest anrufen: +36 70 367 4893">
+              Anrufen
+            </a>
             <a class="button secondary" href="https://maps.app.goo.gl/NgidqQd69gMZqBmL7" target="_blank" rel="noopener">Útvonalterv</a>
           </div>
         </div>
@@ -1473,7 +1492,12 @@
             <h2>Foglalj időpontot vagy látogass el hozzánk</h2>
             <p>Telefonon, Facebookon és Instagramon is elérhető a Velo Nail Budapest. A térkép link közvetlenül az üzlethez vezet.</p>
             <div class="contact-actions">
-              <a class="button primary" href="tel:+36-70-367-4893">Telefonhívás</a>
+              <a class="mobile-call btn btn-dark"
+                 href="tel:+36 70 367 4893"
+                 target="_top"
+                 aria-label="Velo Nail Budapest anrufen: +36 70 367 4893">
+                Anrufen
+              </a>
               <a class="button secondary" href="https://maps.app.goo.gl/NgidqQd69gMZqBmL7" target="_blank" rel="noopener">Megnyitás térképen</a>
             </div>
           </div>
@@ -1485,7 +1509,10 @@
             </div>
             <div class="contact-row">
               <span>Telefon</span>
-              <a href="tel:+36-70-367-4893">+36 70 367 4893</a>
+              <a class="mobile-call"
+                 href="tel:+36 70 367 4893"
+                 target="_top"
+                 aria-label="Velo Nail Budapest anrufen: +36 70 367 4893">+36 70 367 4893</a>
             </div>
             <div class="contact-row">
               <span>Facebook</span>
