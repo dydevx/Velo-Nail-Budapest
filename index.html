@@ -7,17 +7,19 @@
   <title>Velo Nail Budapest</title>
   <style>
     :root {
-      --ink: #4b302f;
-      --muted: #8a6f6a;
-      --paper: #fff8f5;
+      --ink: #4a3330;
+      --muted: #8e706a;
+      --paper: #fff7f3;
       --panel: #fffdfb;
-      --stone: #edd9d4;
-      --rose: #d9838e;
-      --rose-dark: #b95b68;
-      --sage: #9b8b73;
-      --gold: #d4aa66;
-      --shadow: 0 20px 55px rgba(96, 57, 56, 0.14);
-      --radius: 18px;
+      --blush: #f8ded9;
+      --stone: #ead3cc;
+      --rose: #d98292;
+      --rose-dark: #a94f62;
+      --sage: #9d8b73;
+      --gold: #c6a36b;
+      --champagne: #f3dfcf;
+      --shadow: 0 20px 52px rgba(126, 73, 74, 0.13);
+      --radius: 14px;
     }
 
     * {
@@ -31,7 +33,9 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--paper);
+      background:
+        linear-gradient(180deg, rgba(255, 247, 243, 0.96), rgba(253, 234, 226, 0.88)),
+        var(--paper);
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.5;
     }
@@ -59,14 +63,16 @@
       position: fixed;
       inset: 0 0 auto;
       z-index: 10;
-      background: rgba(75, 48, 47, 0.84);
-      color: #fff;
+      background: rgba(255, 250, 247, 0.86);
+      color: var(--ink);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      border-bottom: 1px solid rgba(216, 166, 154, 0.32);
+      box-shadow: 0 12px 32px rgba(126, 73, 74, 0.08);
     }
 
     .nav {
-      width: min(1180px, calc(100% - 32px));
+      width: calc(100% - 32px);
+      max-width: 1180px;
       min-height: 66px;
       margin: 0 auto;
       display: flex;
@@ -85,7 +91,7 @@
     }
 
     .brand small {
-      color: rgba(255, 255, 255, 0.72);
+      color: var(--rose-dark);
       font-size: 0.74rem;
       font-weight: 500;
     }
@@ -102,13 +108,13 @@
     .nav-links a {
       padding: 8px 10px;
       border-radius: 999px;
-      color: rgba(255, 255, 255, 0.86);
+      color: var(--muted);
     }
 
     .nav-links a:hover,
     .nav-links a:focus-visible {
-      background: rgba(255, 255, 255, 0.16);
-      color: #fff;
+      background: rgba(217, 130, 146, 0.12);
+      color: var(--rose-dark);
       outline: none;
     }
 
@@ -117,20 +123,23 @@
       padding: 112px 0 56px;
       display: grid;
       align-items: end;
-      color: #fff;
+      color: var(--ink);
       background:
-        linear-gradient(90deg, rgba(75, 48, 47, 0.72), rgba(75, 48, 47, 0.34) 52%, rgba(75, 48, 47, 0.08)),
-        url("z7833178067741_52d6ce4ec17b1c7ca9a29ed0f11c5509.jpg") center / cover;
+        linear-gradient(90deg, rgba(255, 247, 243, 0.94), rgba(255, 239, 233, 0.78) 48%, rgba(250, 219, 213, 0.36)),
+        url("nail3.jpg") center 46% / cover;
     }
 
     .hero-inner,
     .section-inner {
-      width: min(1180px, calc(100% - 32px));
+      width: calc(100% - 32px);
+      max-width: 1180px;
       margin: 0 auto;
     }
 
     .hero-copy {
+      width: 100%;
       max-width: 760px;
+      min-width: 0;
       display: grid;
       gap: 22px;
     }
@@ -138,10 +147,10 @@
     .eyebrow {
       width: fit-content;
       padding: 7px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.42);
+      border: 1px solid rgba(201, 157, 124, 0.38);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 250, 247, 0.7);
+      color: var(--rose-dark);
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -161,11 +170,12 @@
       font-weight: 500;
       letter-spacing: 0;
       text-wrap: balance;
+      overflow-wrap: break-word;
     }
 
     .hero p {
       max-width: 620px;
-      color: rgba(255, 255, 255, 0.86);
+      color: var(--muted);
       font-size: clamp(1rem, 1.8vw, 1.25rem);
     }
 
@@ -190,7 +200,7 @@
       position: relative;
       cursor: pointer;
       touch-action: manipulation;
-      -webkit-tap-highlight-color: rgba(217, 131, 142, 0.25);
+      -webkit-tap-highlight-color: rgba(217, 130, 146, 0.25);
       transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
     }
 
@@ -201,7 +211,7 @@
     }
 
     .button.primary {
-      background: var(--rose);
+      background: linear-gradient(180deg, #df93a0, var(--rose));
       color: #fff;
     }
 
@@ -211,39 +221,39 @@
     }
 
     .btn-dark {
-      background: var(--ink);
+      background: var(--rose-dark);
       color: #fff;
-      border-color: var(--ink);
+      border-color: var(--rose-dark);
     }
 
     .btn-dark:hover,
     .btn-dark:focus-visible {
-      background: #2f1c1b;
-      border-color: #2f1c1b;
+      background: #8f4354;
+      border-color: #8f4354;
     }
 
     .button.secondary {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.38);
-      color: #fff;
+      background: rgba(255, 250, 247, 0.66);
+      border-color: rgba(201, 157, 124, 0.42);
+      color: var(--ink);
     }
 
     .button.whatsapp {
-      background: #25d366;
-      border-color: #25d366;
-      color: #173b24;
+      background: linear-gradient(180deg, #e29aa6, var(--rose));
+      border-color: rgba(169, 79, 98, 0.18);
+      color: #fff;
     }
 
     .button.whatsapp:hover,
     .button.whatsapp:focus-visible {
-      background: #1fb85a;
-      border-color: #1fb85a;
-      color: #0f2f1a;
+      background: linear-gradient(180deg, #d98292, var(--rose-dark));
+      border-color: rgba(169, 79, 98, 0.28);
+      color: #fff;
     }
 
     .button.whatsapp.appointment-submit {
       width: fit-content;
-      color: #102d19;
+      color: #fff;
     }
 
     .button.light {
@@ -262,8 +272,8 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
       margin-top: 34px;
-      background: rgba(255, 255, 255, 0.22);
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(234, 211, 204, 0.52);
+      border: 1px solid rgba(234, 211, 204, 0.74);
       border-radius: var(--radius);
       overflow: hidden;
       max-width: 900px;
@@ -272,12 +282,12 @@
     .fact {
       min-height: 92px;
       padding: 18px;
-      background: rgba(75, 48, 47, 0.44);
+      background: rgba(255, 253, 251, 0.74);
     }
 
     .fact span {
       display: block;
-      color: rgba(255, 255, 255, 0.66);
+      color: var(--rose-dark);
       font-size: 0.76rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -328,16 +338,17 @@
     }
 
     .intro-band {
-      background: var(--panel);
+      background: rgba(255, 253, 251, 0.88);
       padding: 34px 0;
       border-bottom: 1px solid var(--stone);
     }
 
     .intro-grid {
-      width: min(1180px, calc(100% - 32px));
+      width: calc(100% - 32px);
+      max-width: 1180px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 22px;
     }
 
@@ -358,7 +369,7 @@
     }
 
     .menu-section {
-      background: linear-gradient(180deg, #fffdfb 0%, #fff3ef 100%);
+      background: linear-gradient(180deg, #fffdfb 0%, #fdebe5 100%);
     }
 
     .drink-source {
@@ -371,7 +382,7 @@
       border: 1px solid var(--stone);
       border-radius: calc(var(--radius) + 6px);
       background:
-        radial-gradient(circle at top right, rgba(217, 131, 142, 0.16), transparent 34%),
+        linear-gradient(135deg, rgba(255, 250, 247, 0.98), rgba(248, 222, 217, 0.42)),
         var(--panel);
       box-shadow: 0 16px 40px rgba(96, 57, 56, 0.08);
     }
@@ -453,7 +464,7 @@
 
     .drink-item:hover {
       transform: translateY(-2px);
-      border-color: rgba(185, 91, 104, 0.34);
+      border-color: rgba(169, 79, 98, 0.34);
       box-shadow: 0 16px 30px rgba(96, 57, 56, 0.12);
     }
 
@@ -478,10 +489,10 @@
       gap: 7px;
       padding: 7px 10px;
       border-radius: 999px;
-      background: #fff2ed;
+      background: #fff3ee;
       color: var(--muted);
       font-size: 0.88rem;
-      border: 1px solid #ece2d7;
+      border: 1px solid var(--stone);
     }
 
     .drink-prices strong {
@@ -490,7 +501,7 @@
     }
 
     .media-band {
-      background: #5a3938;
+      background: linear-gradient(135deg, #5d3f3b, #8f5961);
       color: #fff;
     }
 
@@ -529,48 +540,82 @@
     }
 
     .prices {
-      background: linear-gradient(180deg, #fffdfb 0%, #fff7f3 100%);
+      background:
+        linear-gradient(180deg, rgba(255, 253, 251, 0.92), rgba(250, 225, 219, 0.82)),
+        var(--paper);
     }
 
     .price-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 32px;
+      gap: 16px;
       align-items: stretch;
-      padding: 30px;
+      padding: 18px;
       border: 1px solid var(--stone);
-      border-radius: calc(var(--radius) + 8px);
+      border-radius: calc(var(--radius) + 10px);
       background:
-        radial-gradient(circle at top right, rgba(217, 131, 142, 0.12), transparent 28%),
+        linear-gradient(135deg, rgba(255, 253, 251, 0.98), rgba(248, 222, 217, 0.55)),
         var(--panel);
-      box-shadow: 0 18px 44px rgba(96, 57, 56, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .price-poster {
+      max-width: 880px;
+      margin: 0 auto 24px;
+      overflow: hidden;
+      border: 1px solid rgba(217, 130, 146, 0.34);
+      border-radius: calc(var(--radius) + 10px);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .price-poster img {
+      width: 100%;
+      background: #fff;
     }
 
     .price-card {
+      position: relative;
       display: grid;
       gap: 16px;
-      padding: 24px 0;
-      border: 0;
-      border-bottom: 1px solid var(--stone);
-      border-radius: 0;
-      background: transparent;
-      box-shadow: none;
-      transition: none;
+      padding: 24px 18px 18px;
+      border: 1px solid rgba(217, 130, 146, 0.3);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255, 253, 251, 0.96), rgba(255, 245, 241, 0.9));
+      box-shadow: 0 14px 30px rgba(126, 73, 74, 0.08);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
       height: 100%;
     }
 
     .price-card:hover {
-      transform: none;
-      border-color: var(--stone);
-      box-shadow: none;
+      transform: translateY(-2px);
+      border-color: rgba(169, 79, 98, 0.42);
+      box-shadow: 0 18px 36px rgba(126, 73, 74, 0.12);
+    }
+
+    .price-card::before {
+      content: attr(data-number);
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #eaa4ae, var(--rose-dark));
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.22rem;
+      font-weight: 700;
+      box-shadow: 0 10px 18px rgba(169, 79, 98, 0.24);
     }
 
     .price-card.wide {
       grid-column: 1 / -1;
-      padding: 28px 0 30px;
-      margin: 4px 0;
-      border-top: 1px solid var(--stone);
-      border-bottom: 1px solid var(--stone);
+      padding: 24px 18px 20px;
+      margin: 0;
     }
 
     .price-top {
@@ -578,6 +623,8 @@
       justify-content: space-between;
       gap: 14px;
       align-items: center;
+      min-height: 54px;
+      padding-left: 62px;
       padding-bottom: 14px;
       border-bottom: 1px solid var(--stone);
     }
@@ -593,7 +640,7 @@
       flex: 0 0 auto;
       padding: 7px 10px;
       border-radius: 999px;
-      background: #fff0ea;
+      background: #fff1ec;
       color: var(--rose-dark);
       font-size: 0.82rem;
       font-weight: 800;
@@ -614,7 +661,7 @@
       gap: 14px;
       align-items: baseline;
       padding: 12px 0;
-      border-bottom: 1px solid #eee8df;
+      border-bottom: 1px solid rgba(234, 211, 204, 0.72);
     }
 
     .price-list li:last-child {
@@ -648,15 +695,15 @@
     .size-box {
       display: grid;
       gap: 10px;
-      padding: 0 18px 0 0;
-      background: transparent;
-      border-radius: 0;
-      border-right: 1px solid #ece2d7;
+      padding: 14px;
+      background: rgba(255, 250, 247, 0.68);
+      border: 1px solid rgba(234, 211, 204, 0.8);
+      border-radius: 12px;
     }
 
     .size-box:last-child {
-      padding-right: 0;
-      border-right: 0;
+      padding-right: 14px;
+      border-right: 1px solid rgba(234, 211, 204, 0.8);
     }
 
     .size-box h4 {
@@ -690,7 +737,7 @@
     }
 
     .gallery {
-      background: var(--paper);
+      background: linear-gradient(180deg, #fff7f3, #fffdfb);
     }
 
     .gallery-grid {
@@ -727,8 +774,8 @@
 
     .contact {
       background:
-        linear-gradient(90deg, rgba(75, 48, 47, 0.9), rgba(75, 48, 47, 0.66)),
-        url("z7833178067762_784ab7108f32dad482787cce7497c664.jpg") center / cover;
+        linear-gradient(90deg, rgba(74, 51, 48, 0.86), rgba(169, 79, 98, 0.64)),
+        url("z7833193473414_fa9a909b97a8812df76d5d7c915ea0f9.jpg") center / cover;
       color: #fff;
     }
 
@@ -845,7 +892,7 @@
     .form-field select:focus,
     .form-field textarea:focus {
       border-color: var(--rose);
-      outline: 3px solid rgba(217, 131, 142, 0.2);
+      outline: 3px solid rgba(217, 130, 146, 0.2);
     }
 
     .appointment-note {
@@ -926,7 +973,7 @@
 
     footer {
       padding: 22px 0;
-      background: #4b302f;
+      background: #4a3330;
       color: rgba(255, 255, 255, 0.66);
       font-size: 0.9rem;
     }
@@ -983,11 +1030,11 @@
       }
 
       .price-grid {
-        gap: 0;
+        gap: 16px;
       }
 
       .price-card.cleaning {
-        padding-top: 0;
+        padding-top: 24px;
       }
 
       .price-card.gel-polish {
@@ -999,8 +1046,8 @@
       }
 
       .size-box:nth-child(2) {
-        padding-right: 0;
-        border-right: 0;
+        padding-right: 14px;
+        border-right: 1px solid rgba(234, 211, 204, 0.8);
       }
 
       .contact-layout {
@@ -1039,13 +1086,23 @@
         background-position: center;
       }
 
+      .hero-copy {
+        max-width: calc(100vw - 32px);
+      }
+
+      h1 {
+        font-size: 2.35rem;
+        line-height: 1.02;
+      }
+
       .hero-actions,
       .contact-actions {
         flex-direction: column;
         align-items: stretch;
       }
 
-      .button {
+      .button,
+      .btn {
         width: 100%;
       }
 
@@ -1064,6 +1121,7 @@
 
       .price-top {
         display: grid;
+        gap: 8px;
       }
 
       .duration,
@@ -1090,20 +1148,18 @@
       }
 
       .price-card.wide {
-        padding: 24px 0;
+        padding: 24px 18px 20px;
       }
 
       .size-box,
       .size-box:nth-child(2) {
-        padding-right: 0;
-        padding-bottom: 16px;
-        border-right: 0;
-        border-bottom: 1px solid #ece2d7;
+        padding: 14px;
+        border: 1px solid rgba(234, 211, 204, 0.8);
       }
 
       .size-box:last-child {
-        padding-bottom: 0;
-        border-bottom: 0;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(234, 211, 204, 0.8);
       }
 
       .drink-category-head {
@@ -1142,7 +1198,7 @@
       }
 
       .button.secondary:hover {
-        background: rgba(255, 255, 255, 0.12);
+        background: rgba(255, 250, 247, 0.66);
       }
     }
   </style>
@@ -1152,7 +1208,7 @@
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="#top">
         <span>Velo Nail Budapest</span>
-        <small>Nail - Haircut - Coffee</small>
+        <small>Nail Art - Gel Nails - Russian Manicure</small>
       </a>
       <div class="nav-links">
         <a href="#arak">Árak</a>
@@ -1169,7 +1225,7 @@
         <div class="hero-copy">
           <span class="eyebrow">1111 Budapest - Bertalan Lajos utca 18</span>
           <h1>Velo Nail Budapest</h1>
-          <p>Manikűr, pedikűr, műköröm, férfi hajvágás és frissítő italok egy barátságos budapesti szalonban.</p>
+          <p>Nail art, gel nails, russian manicure és férfi hajvágás egy puha, rózsaszín hangulatú budapesti szalonban.</p>
           <div class="hero-actions">
             <a class="mobile-call btn btn-dark"
                href="tel:+36 70 367 4893"
@@ -1188,7 +1244,7 @@
         <div class="facts" aria-label="Quick information">
           <div class="fact">
             <span>Szolgáltatások</span>
-            <strong>Nail, haircut, coffee</strong>
+            <strong>Nail art, gel nails, haircut</strong>
           </div>
           <div class="fact">
             <span>Cím</span>
@@ -1196,7 +1252,7 @@
           </div>
           <div class="fact">
             <span>Időpont</span>
-            <strong>Telefonon vagy közösségi oldalon</strong>
+            <strong>By appointment</strong>
           </div>
         </div>
       </div>
@@ -1205,16 +1261,20 @@
     <div class="intro-band" aria-label="Highlights">
       <div class="intro-grid">
         <div class="intro-item">
-          <strong>Ápolt kéz és láb</strong>
-          <span>Tisztítás, masszázs, gél lakk és műköröm építés.</span>
+          <strong>High quality</strong>
+          <span>Precíz nail art, gel nails és ápolt kivitelezés.</span>
         </div>
         <div class="intro-item">
-          <strong>Férfi hajvágás</strong>
-          <span>Hajvágás, szakáll igazítás, hajmosás.</span>
+          <strong>Hygiene &amp; safety</strong>
+          <span>Tiszta eszközök, rendezett munkaállomás.</span>
         </div>
         <div class="intro-item">
-          <strong>Italok helyben</strong>
-          <span>Yogurt shake, fruit tea, milk tea és kávé.</span>
+          <strong>By appointment</strong>
+          <span>Foglalás telefonon vagy WhatsApp üzenetben.</span>
+        </div>
+        <div class="intro-item">
+          <strong>Love in every detail</strong>
+          <span>Puha rózsaszín hangulat és finom részletek.</span>
         </div>
       </div>
     </div>
@@ -1229,8 +1289,12 @@
           <p>Az árak forintban értendők. A műköröm árak egy alapszínt tartalmaznak, a díszítés körmönként számolandó.</p>
         </div>
 
+        <figure class="price-poster">
+          <img loading="lazy" src="menu new.jpg" alt="Velo Nail Budapest price menu poster with nail, removal and men's haircut prices">
+        </figure>
+
         <div class="price-grid">
-          <article class="price-card cleaning">
+          <article class="price-card cleaning" data-number="01">
             <div class="price-top">
               <h3>Tisztítás / Cleaning</h3>
               <span class="duration">35 perc / 35 min</span>
@@ -1244,14 +1308,10 @@
                 <span class="item-name"><strong>Láb / Feet</strong>tisztítás + masszázs / cleaning + massage</span>
                 <span class="amount">7000 Ft</span>
               </li>
-              <li>
-                <span class="item-name"><strong>Láb / Feet For Man</strong>tisztítás + masszázs / cleaning + massage</span>
-                <span class="amount">10.000 Ft</span>
-              </li>
             </ul>
           </article>
 
-          <article class="price-card gel-polish">
+          <article class="price-card gel-polish" data-number="02">
             <div class="price-top">
               <h3>Gél lakk / Gel Polish</h3>
               <span class="duration">1 óra / 1h</span>
@@ -1276,7 +1336,7 @@
             </ul>
           </article>
 
-          <article class="price-card wide">
+          <article class="price-card wide" data-number="03">
             <div class="price-top">
               <h3>Műköröm építés / Nail Extensions</h3>
               <span class="duration">1 óra 45 perc / 1h 45 min</span>
@@ -1310,7 +1370,7 @@
             </div>
           </article>
 
-          <article class="price-card removal">
+          <article class="price-card removal" data-number="04">
             <div class="price-top">
               <h3>Eltávolítás / Removal</h3>
               <span class="duration">20 perc / 20 min</span>
@@ -1328,7 +1388,7 @@
             </ul>
           </article>
 
-          <article class="price-card haircut">
+          <article class="price-card haircut" data-number="05">
             <div class="price-top">
               <h3>Férfi Hajvágás / Men&apos;s Haircut</h3>
               <span class="duration">45 perc / 45 min</span>
